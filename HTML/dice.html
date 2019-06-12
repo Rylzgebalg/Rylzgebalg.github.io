@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!--
+Autor: Jan Rödder, 5963303
+Für Firefox auf 1920x1080 Bildschirmen
+-->
+<html>
+<head>
+  <title>Würfel-Simulator</title>
+  <meta charset="utf-8">
+  <link href="style.css" type="text/css" rel="stylesheet">
+  <link href="styleDice.css" type="text/css" rel="stylesheet">
+  <link href="styleKeepFooterDown.css" type="text/css" rel="stylesheet">
+  <script src="scriptDice.js"></script>
+</head>
+<body>
+  <header id = "header" class="cosmetics">
+    <h1>Würfel-Simulator</h1>
+  </header>
+<main class="flex-container">
+  <nav id ="navigation" class="content">
+    <span>Navigation</span>
+    <a href="main.html">Home</a>
+    <a href="memory.html">Memory</a>
+    <a href="dice.html">Würfeln</a>
+    <a id="borderbot" href="form.html">Bestellformular</a>
+  </nav>
+
+  <article id ="text" class="content">
+    <section>
+      <p>
+        Würfel werden zur Generierung von Zufallszahlen in Brett- oder Glücksspielen
+        genutzt. Der traditionelle Würfel liefert Zahlen zwischen 1 und 6. Würfel verschiedener
+        Zahlenbereiche werden mit untschiedlichen geometrischen Formen verwirklicht,
+        z.B. Pyramiden.
+      </p>
+      <p>Auf dieser Seite können durch einen Zufallszahlengenerator ein oder
+        mehrere Würfel mit beliebig vielen Seiten geworfen werden. Dazu wird in
+        das Feld unter "Würfelanzahl" die Anzahl der gewünschten Würfel und in das
+        Feld "Seitenzahl" die gewünschte Seitenzahl eingetragen. Der "Würfeln"-Knopf
+        erzeugt die Summe aus allen erwürfelten Zufallszahlen und stellt die einzelnen
+        Zahlen unter der Summe dar.
+      </p>
+    </section>
+    <section id="ruleSet">
+      <button id ="ruleButton" type="button" onclick ="rules()">+ Hinweise</button>
+      <ol id ="ruleBlock" type="1">
+        <li>Der Generator ist geometrisch nicht begrenzt, d.h. es kann z.B ein
+        43-seitiger Würfel simuliert werden.</li>
+        <li>Eine negative Zahl wird als ihr positives Gegenstück ausgewertet.</li>
+        <li>Aus der Null und jeglichen Buchstabenkombinationen können keine
+        Zufallszahlen erzeugt werden.</li>
+        <li>Es können maximal 50 einzelne Würfe dargestellt, aber Zufallssummen
+        aus mehr als 50 Würfen generiert werden.</li>
+      </ol>
+    </section>
+    <section id="diceSection">
+      <form>
+        Würfelzahl:<br>
+        <input id ="count" type="text"><br><br>
+        Seitenzahl:<br>
+        <input id ="sides" type="text"><br>
+      </form>
+      <br>
+      <button type="button" onclick ="rollDice()">Würfeln</button>
+      <p id="diceAdded"><span id="ho"></span></p>
+      <p id="allNumbers"><img id="becher" src="images/becher.jpg"><span id="he">3</span></p>
+    </section>
+  </article>
+
+  <nav id = "links" class="content">
+    <span>Externe Links</span>
+    <a href="https://www.uni-koeln.de/" target="_blank">Universität zu Köln</a>
+    <a href="http://lehre.idh.uni-koeln.de/lehrveranstaltungen/wisem18/it-zertifikat-der-phil.fak-advanced-web-basics/" target ="_blank">IT-Zertifikat</a>
+    <a href="https://www.w3schools.com/default.asp" target="_blank">w3schools</a>
+    <a href="https://wiki.selfhtml.org/wiki/Startseite"target ="_blank" id="borderbot">SELFHTML-Wiki</a>
+  </nav>
+</main>
+<footer id ="footer" class="cosmetics">
+  <span>&copy; Copyright 2019</span>
+  <span ><a id ="contact" href="contact.html" target="_blank">Kontakt</a></span>
+  <span title="Bald verfügbar!">Social Media</span>
+</footer>
+</body>
+</html>

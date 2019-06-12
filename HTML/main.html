@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!--
+Autor: Jan Rödder, 5963303
+Für Firefox auf 1920x1080 Bildschirmen
+-->
+<html>
+<head>
+  <title>Hauptseite</title>
+  <meta charset="utf-8">
+  <link href="style.css" type="text/css" rel="stylesheet">
+  <link href="styleMain.css" type="text/css" rel="stylesheet">
+  <link href="styleKeepFooterDown.css" type="text/css" rel="stylesheet">
+  <script src="scriptMain.js"></script>
+
+</head>
+<body>
+  <header id = "header" class="cosmetics">
+    <h1>Hauptseite</h1>
+  </header>
+<main class="flex-container">
+  <nav id ="navigation" class="content">
+    <span>Navigation</span>
+    <a href="main.html">Home</a>
+    <a href="memory.html">Memory</a>
+    <a href="dice.html">Würfeln</a>
+    <a id="borderbot" href="form.html">Bestellformular</a>
+  </nav>
+
+  <article id ="text" class="content">
+
+
+    <section id="gallery">
+      <figure class="picture" onmouseover="changeMemory()" onmouseout="changeMemoryBack()">
+      <a href="memory.html"><img src="images/spades.png" id ="mem" alt=""></a>
+      <figcaption>Memory spielen</figcaption>
+      </figure>
+      <figure class="picture" onmouseover="changeDice()" onmouseout="changeDiceBack()">
+      <a href="dice.html"><img src="images/dice.png" id="dice" alt=""></a>
+      <figcaption>Würfel-Simulator</figcaption>
+      </figure>
+      <figure class="picture" onmouseover="changeForm()" onmouseout="changeFormBack()">
+      <a href="form.html"><img id ="form" src="images/form.png" alt="Glaswürfel"></a>
+      <figcaption>Bestellen</figcaption>
+      </figure>
+    </section>
+  </article>
+
+  <nav id = "links" class="content">
+    <span>Externe Links</span>
+    <a href="https://www.uni-koeln.de/" target="_blank">Universität zu Köln</a>
+    <a href="http://lehre.idh.uni-koeln.de/lehrveranstaltungen/wisem18/it-zertifikat-der-phil.fak-advanced-web-basics/" target ="_blank">IT-Zertifikat</a>
+    <a href="https://www.w3schools.com/default.asp" target="_blank">w3schools</a>
+    <a href="https://wiki.selfhtml.org/wiki/Startseite"target ="_blank" id="borderbot">SELFHTML-Wiki</a>
+  </nav>
+</main>
+<footer id ="footer" class="cosmetics">
+  <span>&copy; Copyright 2019</span>
+  <span ><a id ="contact" href="contact.html" target="_blank">Kontakt</a></span>
+  <span title="Bald verfügbar!">Social Media</span>
+</footer>
+</body>
+</html>

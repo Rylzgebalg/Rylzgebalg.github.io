@@ -1,0 +1,437 @@
+<!DOCTYPE HTML>
+<!--
+Autor: Jan Rödder, 5963303
+Für Firefox auf 1920x1080 Bildschirmen
+-->
+<html>
+<head>
+  <title>Bestellformular</title>
+  <meta charset="utf-8">
+  <link href="style.css" type="text/css" rel="stylesheet">
+  <link href="styleForm.css" type="text/css" rel="stylesheet">
+  <link href="styleFixedMenus.css" type="text/css" rel="stylesheet">
+  <script src="scriptForm.js"></script>
+</head>
+<body onload="resetPrices()">
+  <header id = "header" class="cosmetics">
+    <h1>Würfel & Karten kaufen</h1>
+  </header>
+<main class="flex-container">
+  <nav class ="invis" id ="navigation" class="content">
+    <span>Navigation</span>
+    <a href="main.html">Home</a>
+    <a href="memory.html">Memory</a>
+    <a href="dice.html">Würfeln</a>
+    <a id="borderbot" href="form.html">Bestellformular</a>
+  </nav>
+  <nav class ="fixed" id ="navigation" class="content">
+    <span>Navigation</span>
+    <a href="main.html">Home</a>
+    <a href="memory.html">Memory</a>
+    <a href="dice.html">Würfeln</a>
+    <a id="borderbot" href="form.html">Bestellformular</a>
+  </nav>
+
+
+  <article id ="text" class="content">
+    <br>
+    <section id ="flex-info">
+      <br>
+      <p> Die Tabelle gibt einen Preisüberblick. Bewegen Sie die Maus über
+      <span class ="highlight" title="Anmerkungen erscheinen in diesem Fenster">
+        diese Art von Text</span> um zusätzliche Informationen
+        anzeigen zu lassen. Die Farbe jeglicher Artikel ist im Preis inbegriffen!
+        <br>Das Design der hier angebotenen Karten entspricht dem Design der Karten
+        aus dem <a href="memory.html">Memory-Spiel</a>. Bilder der Artikel sind auf dieser Seite zu finden.</p>
+      <table id="priceList">
+        <tr>
+          <th>Preis pro Karte</th>
+          <th>Preis pro Würfel</th>
+        </tr>
+        <tr>
+          <td>0.20 €</td>
+          <td class="highlight" title="4 Seiten:  1.20 €&#10;6 Seiten:  1.30 €&#10;8 Seiten:  1.40 €&#10;10 Seiten: 1.50 €&#10;12 Seiten: 1.60 €&#10;20 Seiten: 2.00 €&#10;">
+          Je nach Seitenzahl</td>
+        </tr>
+        <tr>
+          <th>Würfelmaterial</th>
+          <th>Preisaufschlag</th>
+        </tr>
+        <tr>
+          <td>Kunststoff</td>
+          <td>+0.00 €</td>
+        </tr>
+        <tr>
+          <td>Kunststoff (durschsichtig)</td>
+          <td>+0.10 €</td>
+        </tr>
+        <tr>
+          <td>Glas</td>
+          <td>+0.20 €</td>
+        </tr>
+        <tr>
+          <td>Holz</td>
+          <td>+0.30 €</td>
+        </tr>
+        <tr>
+          <td>Metall</td>
+          <td>+0.40 €</td>
+        </tr>
+      </table>
+    </section>
+    <br>
+    <section>
+      <fieldset id="flex-gallery">
+        <legend><span id="galDice" onclick="showCardGallery(this.id)"> Gallerie Würfel </span>
+        <span id="galCard" onclick="showCardGallery(this.id)"> Gallerie Karten </span></legend>
+        <section id="flex-Dice">
+          <fig id="d1" class="dicePicture">
+            <img src="images/k.jpg" alt="Kunststoffwürfel">
+            <figcaption>Kunststoffwürfel</figcaption>
+          </fig>
+          <fig id="d2" class="dicePicture">
+            <img src="images/dkd10.jpg" alt="Kunststoff, durschsichtig">
+            <figcaption>Kunststoff, durschsichtig</figcaption>
+          </fig>
+          <fig id="d3" class="dicePicture">
+            <img src="images/gd12.jpg" alt="Glaswürfel">
+            <figcaption>Glaswürfel</figcaption>
+          </fig>
+          <fig id="d4" class="dicePicture">
+            <img src="images/hd6.jpg" alt="Holzwürfel">
+            <figcaption>Holzwürfel</figcaption>
+          </fig>
+          <fig id="d5" class="dicePicture">
+            <img src="images/md6.jpg" alt="Metallwürfel">
+            <figcaption>Metallwürfel</figcaption>
+          </fig>
+        </section>
+        <section id="flex-Card">
+          <img id ="c" src="images/allcards2.png">
+        </section>
+      </fieldset>
+    </section>
+    <section>
+      <form action="/action_page.php">
+        <fieldset>
+          <legend>Lieferadresse</legend>
+          <label for="firstname">Vorname:</label><br>
+          <input type="text" name="firstname" id="firstname" value="">
+          <br>
+          <label for="lastname">Nachname:</label><br>
+          <input type="text" name="lastname" id="lastname" value="" required>
+          <br>
+          <label for="strasse">Adresse:</label><br>
+          <input type="text" name="strasse" id="strasse" value="" placeholder="Straße">
+          <input type="number" name="hausnummer" id="hausnummer" value="" placeholder="Hausnummer">
+          <br>
+          <input type="text" name="plz" id="plz" value="" placeholder="PLZ">
+          <input type="text" name="ort" id="ort" value="" placeholder="Ort">
+          <br>
+        </fieldset>
+        <fieldset>
+          <legend>Bestellung</legend>
+            <fieldset>
+              <legend>Artikel</legend>
+              <input type="checkbox" name="card" id="card" value="0" onclick="displayCard()">
+              <label for="card">Karten</label><br>
+              <input type="checkbox" name="dice" id="dice" value="1" onclick="displayDice()">
+              <label for="dice">Würfel</label><br>
+            </fieldset>
+            <fieldset id="cardForm">
+              <legend>Karten</legend>
+              <fieldset>
+                <legend>Deckbasis</legend>
+                  <input type="radio" name="deck" id="32" value="32" checked>
+                  <label class ="highlight" for="32" title="Enthält 7 bis 10, Bube, Dame, König und Ass pro Farbe">32 Karten</label><br>
+                  <input type="radio" name="deck" id="52" value="52">
+                  <label class ="highlight" for="52" title="Enthält 2 bis 10, Bube, Dame, König und Ass pro Farbe">52 Karten</label><br>
+              </fieldset>
+              <fieldset>
+                <legend>Enthaltene Farben</legend>
+                <input type="checkbox" name="suit" id="1" value="pik" checked>
+                <label for="card">Pik</label><br>
+                <input type="checkbox" name="suit" id="2" value="herz" checked>
+                <label for="card">Herz</label><br>
+                <input type="checkbox" name="suit" id="3" value="kreuz" checked>
+                <label for="card">Kreuz</label><br>
+                <input type="checkbox" name="suit" id="4" value="karo" checked>
+                <label for="card">Karo</label><br>
+              </fieldset>
+              <fieldset>
+                <legend>Farbe</legend>
+                <select id="sell1">
+                  <option value="">Blau</option>
+                  <option value="">Braun</option>
+                  <option value="">Gelb</option>
+                  <option value="">Grau</option>
+                  <option value="">Grün</option>
+                  <option value="">Lachsfarben</option>
+                  <option value="">Lila</option>
+                  <option value="">Rot</option>
+                  <option selected value="">Schwarz</option>
+                  <option value="">Braun</option>
+                </select>
+                <label for="sell1">Farbe von Pik und Kreuz</label><br>
+                <select id="sell2">
+                  <option value="">Blau</option>
+                  <option value="">Braun</option>
+                  <option value="">Gelb</option>
+                  <option value="">Grau</option>
+                  <option value="">Grün</option>
+                  <option value="">Lachsfarben</option>
+                  <option value="">Lila</option>
+                  <option selected value="">Rot</option>
+                  <option value="">Schwarz</option>
+                  <option value="">Braun</option>
+                </select>
+                <label for="sell2">Farbe von Herz und Karo</label><br>
+                <select id ="sell3">
+                  <option selected value="">Blau</option>
+                  <option value="">Braun</option>
+                  <option value="">Gelb</option>
+                  <option value="">Grau</option>
+                  <option value="">Grün</option>
+                  <option value="">Lachsfarben</option>
+                  <option value="">Lila</option>
+                  <option value="">Rot</option>
+                  <option value="">Schwarz</option>
+                  <option value="">Braun</option>
+                </select>
+                <label for="sell3">Farbe für die Rückseite</label><br>
+              </fieldset>
+              <fieldset>
+                <legend>Anzahl</legend>
+                <label for="anzahl">Anzahl</label>
+                <input type="number" name="anzahl" id="anzahl" value="0">
+              </fieldset>
+              <br>
+              <button type="button" onclick ="totalPrice()">Kartenpreis ermitteln</button>
+              <p>Ihre Kartenbestellung kostet: <span id="costC">0</span> €.
+            </fieldset>
+            <fieldset id ="diceForm">
+              <legend>Würfel</legend>
+              <fieldset>
+                <legend>Würfelzahl, Seitenzahl, Material und Optik</legend>
+                <table width = "100%">
+                  <tr>
+                    <th class ="sides">Seitenzahl</th>
+                    <th class="quantity">Anzahl</th>
+                    <th class="material">Material</th>
+                    <th class="color">Farbe</th>
+                    <th class="price">Preis</th>
+                  </tr>
+                  <tr>
+                    <td class ="sides" id="sd4" type="number">4</td>
+                    <td class="quantity"><input type="number" name="quantity4" id="quantity4" value="0"></td>
+                    <td class="material">
+                      <select id ="md4" name="material">
+                        <option value="0">Kunststoff</option>
+                        <option value="0.1">Kunststoff (durschsichtig)</option>
+                        <option value="0.2">Glas</option>
+                        <option value="0.3">Holz</option>
+                        <option value="0.4">Metall</option>
+                      </select>
+                    </td>
+                    <td class="color">
+                      <select>
+                        <option value="">Blau</option>
+                        <option value="">Braun</option>
+                        <option value="">Gelb</option>
+                        <option value="">Grau</option>
+                        <option value="">Grün</option>
+                        <option value="">Lachsfarben</option>
+                        <option value="">Lila</option>
+                        <option value="">Rot</option>
+                        <option value="">Schwarz</option>
+                        <option value="">Braun</option>
+                      </select>
+                    </td>
+                    <td class="price" id ="pd4">0 €</td>
+                  </tr>
+                  <tr>
+                    <td class ="sides" id="sd6" type="number">6</td>
+                    <td class="quantity" ><input type="number" name="quantity6" id="quantity6" value="0"></td>
+                    <td class="material">
+                      <select id ="md6" name="material">
+                        <option type="number" value="0">Kunststoff</option>
+                        <option type="number" value="0.1">Kunststoff (durschsichtig)</option>
+                        <option type="number" value="0.2">Glas</option>
+                        <option type="number" value="0.3">Holz</option>
+                        <option type="number" value="0.4">Metall</option>
+                      </select>
+                    </td>
+                    <td class="color">
+                      <select>
+                        <option value="">Blau</option>
+                        <option value="">Braun</option>
+                        <option value="">Gelb</option>
+                        <option value="">Grau</option>
+                        <option value="">Grün</option>
+                        <option value="">Lachsfarben</option>
+                        <option value="">Lila</option>
+                        <option value="">Rot</option>
+                        <option value="">Schwarz</option>
+                        <option value="">Braun</option>
+                      </select>
+                    </td>
+                    <td class="price" id ="pd6">0 €</td>
+                  </tr>
+                  <tr>
+                    <td class ="sides" id="sd8" type="number">8</td>
+                    <td class="quantity" ><input type="number" name="quantity8" id="quantity8" value="0"></td>
+                    <td class="material">
+                      <select id ="md8" name="material">
+                        <option type="number" value="0">Kunststoff</option>
+                        <option type="number" value="0.1">Kunststoff (durschsichtig)</option>
+                        <option type="number" value="0.2">Glas</option>
+                        <option type="number" value="0.3">Holz</option>
+                        <option type="number" value="0.4">Metall</option>
+                      </select>
+                    </td>
+                    <td class="color">
+                      <select>
+                        <option value="">Blau</option>
+                        <option value="">Braun</option>
+                        <option value="">Gelb</option>
+                        <option value="">Grau</option>
+                        <option value="">Grün</option>
+                        <option value="">Lachsfarben</option>
+                        <option value="">Lila</option>
+                        <option value="">Rot</option>
+                        <option value="">Schwarz</option>
+                        <option value="">Braun</option>
+                      </select>
+                    </td>
+                    <td class="price" id ="pd8">0 €</td>
+                  </tr>
+                  <tr>
+                    <td class ="sides" id="sd10" type="number">10</td>
+                    <td class="quantity" ><input type="number" name="quantity10" id="quantity10" value="0"></td>
+                    <td class="material">
+                      <select id ="md10" name="material">
+                        <option type="number" value="0">Kunststoff</option>
+                        <option type="number" value="0.1">Kunststoff (durschsichtig)</option>
+                        <option type="number" value="0.2">Glas</option>
+                        <option type="number" value="0.3">Holz</option>
+                        <option type="number" value="0.4">Metall</option>
+                      </select>
+                    </td>
+                    <td class="color">
+                      <select>
+                        <option value="">Blau</option>
+                        <option value="">Braun</option>
+                        <option value="">Gelb</option>
+                        <option value="">Grau</option>
+                        <option value="">Grün</option>
+                        <option value="">Lachsfarben</option>
+                        <option value="">Lila</option>
+                        <option value="">Rot</option>
+                        <option value="">Schwarz</option>
+                        <option value="">Braun</option>
+                      </select>
+                    </td>
+                    <td class="price" id ="pd10">0 €</td>
+                  </tr>
+                  <tr>
+                    <td class ="sides" id="sd12" type="number">12</td>
+                    <td class="quantity" ><input type="number" name="quantity12" id="quantity12" value="0"></td>
+                    <td class="material">
+                      <select id ="md12" name="material">
+                        <option type="number" value="0">Kunststoff</option>
+                        <option type="number" value="0.1">Kunststoff (durschsichtig)</option>
+                        <option type="number" value="0.2">Glas</option>
+                        <option type="number" value="0.3">Holz</option>
+                        <option type="number" value="0.4">Metall</option>
+                      </select>
+                    </td>
+                    <td class="color">
+                      <select>
+                        <option value="">Blau</option>
+                        <option value="">Braun</option>
+                        <option value="">Gelb</option>
+                        <option value="">Grau</option>
+                        <option value="">Grün</option>
+                        <option value="">Lachsfarben</option>
+                        <option value="">Lila</option>
+                        <option value="">Rot</option>
+                        <option value="">Schwarz</option>
+                        <option value="">Braun</option>
+                       </select>
+                    </td>
+                    <td class="price" id ="pd12">0 €</td>
+                  </tr>
+                  <tr>
+                    <td class ="sides" id="sd20" type="number">20</td>
+                    <td class="quantity" ><input type="number" name="quantity20" id="quantity20" value="0"></td>
+                    <td class="material">
+                      <select id ="md20" name="material">
+                        <option type="number" value="0">Kunststoff</option>
+                        <option type="number" value="0.1">Kunststoff (durschsichtig)</option>
+                        <option type="number" value="0.2">Glas</option>
+                        <option type="number" value="0.3">Holz</option>
+                        <option type="number" value="0.4">Metall</option>
+                      </select>
+                    </td>
+                    <td class="color">
+                      <select>
+                        <option value="">Blau</option>
+                        <option value="">Braun</option>
+                        <option value="">Gelb</option>
+                        <option value="">Grau</option>
+                        <option value="">Grün</option>
+                        <option value="">Lachsfarben</option>
+                        <option value="">Lila</option>
+                        <option value="">Rot</option>
+                        <option value="">Schwarz</option>
+                        <option value="">Braun</option>
+                      </select>
+                    </td>
+                    <td class="price" id ="pd20">0 €</td>
+                  </tr>
+                </table>
+              </fieldset>
+              <br>
+              <button type="button" onclick ="totalPrice()">Würfelpreis ermitteln</button>
+              <p>Ihre Würfelbestellung kostet: <span id="costD">0</span>€.
+            </fieldset>
+            <br>
+            <br>
+            <label for="message">Zusatzinformationen</label><br>
+            <textarea name="message" rows="10" cols="30">
+            </textarea>
+            <br><br><br><br>
+            <button type="button" onclick ="totalPrice()">Preis ermitteln</button>
+            <p id="costP">Ihre Bestellung kostet insgesamt: <span id="costS"></span> €</p>
+            <input id="inputButtons" type="submit" value="Jetzt bestellen!">
+            <input id="inputButtons" type="reset" onclick="resetForm()" value="zurücksetzen">
+          </fieldset>
+        </form>
+      </section>
+      <br>
+      <br>
+    </article>
+
+    <nav class ="invis" id = "links" class="content">
+      <span>Externe Links</span>
+      <a href="https://www.uni-koeln.de/" target="_blank">Universität zu Köln</a>
+      <a href="http://lehre.idh.uni-koeln.de/lehrveranstaltungen/wisem18/it-zertifikat-der-phil.fak-advanced-web-basics/" target ="_blank">IT-Zertifikat</a>
+      <a href="https://www.w3schools.com/default.asp" target="_blank">w3schools</a>
+      <a href="https://wiki.selfhtml.org/wiki/Startseite"target ="_blank" id="borderbot">SELFHTML-Wiki</a>
+    </nav>
+    <nav class ="fixed2" id = "links" class="content">
+      <span>Externe Links</span>
+      <a href="https://www.uni-koeln.de/" target="_blank">Universität zu Köln</a>
+      <a href="http://lehre.idh.uni-koeln.de/lehrveranstaltungen/wisem18/it-zertifikat-der-phil.fak-advanced-web-basics/" target ="_blank">IT-Zertifikat</a>
+      <a href="https://www.w3schools.com/default.asp" target="_blank">w3schools</a>
+      <a href="https://wiki.selfhtml.org/wiki/Startseite"target ="_blank" id="borderbot">SELFHTML-Wiki</a>
+    </nav>
+
+</main>
+<footer id ="footer" class="cosmetics">
+  <span>&copy; Copyright 2019</span>
+  <span ><a id ="contact" href="contact.html" target="_blank">Kontakt</a></span>
+  <span title="Bald verfügbar!">Social Media</span>
+</footer>
+</body>
+</html>

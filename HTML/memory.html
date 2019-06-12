@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!--
+Autor: Jan Rödder, 5963303
+Für Firefox auf 1920x1080 Bildschirmen
+-->
+<html>
+<head>
+  <title>Memory</title>
+  <meta charset="utf-8">
+  <link href="style.css" type="text/css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="styleMemory.css">
+  <link href="styleFixedMenus.css" type="text/css" rel="stylesheet">
+
+  <script src="scriptMemory.js"></script>
+</head>
+<body onload="setCardBack()">
+  <header id = "header" class="cosmetics">
+    <h1>Memory</h1>
+  </header>
+<main class="flex-container">
+  <nav class ="invis" id ="navigation" class="content">
+    <span>Navigation</span>
+    <a href="main.html">Home</a>
+    <a href="memory.html">Memory</a>
+    <a href="dice.html">Würfeln</a>
+    <a id="borderbot" href="form.html">Bestellformular</a>
+  </nav>
+  <nav class ="fixed" id ="navigation" class="content">
+    <span>Navigation</span>
+    <a href="main.html">Home</a>
+    <a href="memory.html">Memory</a>
+    <a href="dice.html">Würfeln</a>
+    <a id="borderbot" href="form.html">Bestellformular</a>
+  </nav>
+
+  <article id ="text" class="content">
+    <section>
+      <p>Hier kann Memory für eine Person gespielt werden. Die Karten können können
+      durch Anklicken umgedreht werden. Ein Klick auf "Regeln" zeigt die Spielregeln
+      an. Mit "Neues Spiel" wird ein neues zufälliges Spielfeld erzeugt. "Lösung
+      anzeigen" deckt alle Karten auf und beendet das aktuelle Spiel. Die Zahl
+      über dem "Neues Spiel"-Knopf zeigt die Anzahl der vergangenen Züge an.</p>
+  </section>
+    <section id="ruleSet">
+      <button id ="ruleButton" type="button" onclick ="rules()">+ Regeln</button>
+      <ul id="ruleBlock">
+        <li>Es werden pro Zug jeweils zwei Karten umgedreht.</li>
+        <li>Bei einem ungleichen Paar werden die Karten wieder umgedreht.</li>
+        <li>Bei einem paar gleicher Karten bleibt das Paar aufgedeckt liegen.</li>
+        <li>Die Anordnung der Karten ändert sich während des Spiels nicht.</li>
+        <li>Das Spiel ist <span onclick="win()">gewonnen</span>, wenn alle Karten aufedeckt wurden.</li>
+      </ul>
+    </section>
+    <section>
+      <span id ="score">0</span>
+      <div id="buttonBox">
+        <button id ="ngButton" type="button" onclick ="resetGame()">Neues Spiel</button>
+        <button id ="sButton" type="button" onclick ="solve()">Lösung anzeigen</button>
+      </div>
+      <fig class="game">
+        <img id ="1" onclick = "pic(this.id)" src="images/back.png">
+        <img id ="2" onclick = "pic(this.id)" src="images/back.png">
+        <img id ="3" onclick = "pic(this.id)" src="images/back.png">
+        <img id ="4" onclick = "pic(this.id)" src="images/back.png">
+        <img id ="5" onclick = "pic(this.id)" src="images/back.png">
+      </fig>
+      <fig class="game">
+        <img id ="6" onclick = "pic(this.id)" src="images/back.png">
+        <img id ="7" onclick = "pic(this.id)" src="images/back.png">
+        <img id ="8" onclick = "pic(this.id)" src="images/back.png">
+        <img id ="9" onclick = "pic(this.id)" src="images/back.png">
+        <img id ="10" onclick = "pic(this.id)" src="images/back.png">
+        <img id ="11" onclick = "pic(this.id)" src="images/back.png">
+      </fig>
+      <fig class="game">
+        <img id ="12" onclick = "pic(this.id)" src="images/back.png">
+        <img id ="13" onclick = "pic(this.id)" src="images/back.png">
+        <img id ="14" onclick = "pic(this.id)" src="images/back.png">
+        <img id ="15" onclick = "pic(this.id)" src="images/back.png">
+        <img id ="16" onclick = "pic(this.id)" src="images/back.png">
+      </fig>
+    </section>
+  </article>
+
+  <nav class ="invis" id = "links" class="content">
+    <span>Externe Links</span>
+    <a href="https://www.uni-koeln.de/" target="_blank">Universität zu Köln</a>
+    <a href="http://lehre.idh.uni-koeln.de/lehrveranstaltungen/wisem18/it-zertifikat-der-phil.fak-advanced-web-basics/" target ="_blank">IT-Zertifikat</a>
+    <a href="https://www.w3schools.com/default.asp" target="_blank">w3schools</a>
+    <a href="https://wiki.selfhtml.org/wiki/Startseite"target ="_blank" id="borderbot">SELFHTML-Wiki</a>
+  </nav>
+  <nav class ="fixed2" id = "links" class="content">
+    <span>Externe Links</span>
+    <a href="https://www.uni-koeln.de/" target="_blank">Universität zu Köln</a>
+    <a href="http://lehre.idh.uni-koeln.de/lehrveranstaltungen/wisem18/it-zertifikat-der-phil.fak-advanced-web-basics/" target ="_blank">IT-Zertifikat</a>
+    <a href="https://www.w3schools.com/default.asp" target="_blank">w3schools</a>
+    <a href="https://wiki.selfhtml.org/wiki/Startseite"target ="_blank" id="borderbot">SELFHTML-Wiki</a>
+  </nav>
+</main>
+<footer id ="footer" class="cosmetics">
+  <span>&copy; Copyright 2019</span>
+  <span ><a id ="contact" href="contact.html" target="_blank">Kontakt</a></span>
+  <span title="Bald verfügbar!">Social Media</span>
+</footer>
+</body>
+</html>

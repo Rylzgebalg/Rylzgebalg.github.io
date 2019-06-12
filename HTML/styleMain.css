@@ -1,0 +1,29 @@
+
+#gallery {
+
+  display: flex;
+  justify-content: space-around;
+}
+
+.picture {
+  border: 1px solid #ccc;
+  width: 20%;
+  text-align: center;
+}
+
+.picture:hover {
+  border: 1px #2e4b5d solid;
+  color:white;
+  background-color: #428dbc;
+  text-decoration: none;
+}
+
+
+#gallery img {
+  width: 100%;
+  height: auto;
+}
+
+#gallery a:hover {
+  border: none;
+}

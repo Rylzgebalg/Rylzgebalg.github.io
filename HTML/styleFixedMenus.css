@@ -1,0 +1,14 @@
+
+.invis {
+  visibility: hidden;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.fixed2 {
+  position: fixed;
+  left:1620px;
+
+}

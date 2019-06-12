@@ -1,0 +1,79 @@
+ul {
+  visibility:hidden;
+}
+
+#ruleSet {
+  border: 1px white solid;
+}
+
+#ruleButton {
+  border: 1px white solid;
+  background-color: white;
+  margin: 2px;
+  color: grey;
+  font-size: 16px;
+}
+
+
+/*Spiel */
+
+.game {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px auto;
+}
+
+img {
+
+  height:187px;
+  width: 135px;
+  border-radius: 11px;
+  margin: auto 10px;
+}
+
+#text {
+
+
+}
+ #score {
+   display: block;
+   margin: 20px auto;
+   width:5%;
+   text-align: center;
+   font-size: 34px;
+   background-color: #2e4b5d;
+   color: white;
+   border: 1px black solid;
+ }
+
+#buttonBox {
+  text-align: center;
+}
+
+#ngButton, #sButton {
+  display: inline-block;
+}
+
+
+
+/*Aus styleMain.css damit alles gleich aussieht */
+
+ * {
+  box-sizing: border-box;
+ }
+ *:before,
+ *:after {
+  box-sizing: border-box;
+ }
+ html,
+ body {
+  height: 100%;
+  position: relative;
+ }
+ .main-container {
+  min-height: 100vh; /* will cover the 100% of viewport */
+  overflow: hidden;
+  display: block;
+  position: relative;
+  padding-bottom: 200px; /* height of your footer */
+ }

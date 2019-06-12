@@ -1,0 +1,103 @@
+
+.sides, .quantity, .material, .color {
+  width: 5%;
+  text-align: center;
+}
+
+
+.quantity input {
+  width: 60%
+
+}
+
+.highlight {
+  font-style: italic;
+  text-decoration: underline;
+}
+
+.price {
+  text-align: right;
+}
+
+#flex-info {
+  /*border: 1px black solid;*/
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#flex-info p {
+  margin-right: 200px;
+  /*border: 1px black solid;*/
+}
+
+#flex-gallery {
+ height: 250px;
+}
+
+#galDice {
+  position: relative;
+  bottom: 10px;
+  border-top: 1px black solid;
+  border-left: 1px black solid;
+  border-right: 1px black solid;
+  border-bottom: 1px white solid;
+}
+
+#galCard {
+  position: relative;
+  bottom: 10px;
+  color: grey;
+  border-top: 1px grey solid;
+  border-bottom: 1px grey solid;
+  border-right: 1px grey solid;
+}
+
+
+#flex-Dice {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.dicePicture {
+  border: 1px solid #ccc;
+  width: 15%;
+  text-align: center;
+}
+
+#flex-Dice img {
+  width: 100%;
+  height: auto;
+}
+
+#flex-Card img{
+  display: none;
+  height:235px;
+  margin: auto;
+}
+
+#inputButtons, button {
+  display: inline;
+  font-size: 14px;
+}
+
+ #diceForm, #cardForm {
+   display: none;
+}
+
+#priceList {
+  border-collapse: collapse;
+}
+
+#priceList th {
+  text-align: left
+}
+
+#priceList td {
+      padding-right: 5px;
+}
+
+#priceList, #priceList th, #priceList td {
+  border: 1px black solid;
+}

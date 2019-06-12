@@ -1,0 +1,64 @@
+ol {
+  visibility: hidden;
+}
+
+#ruleSet {
+  border: 1px white solid;
+}
+
+#ruleButton {
+  border: 1px white solid;
+  background-color: white;
+  margin: 2px;
+  color: grey;
+  font-size: 16px;
+}
+
+#diceSection {
+  text-align:center;
+  margin: 20px;
+}
+/*
+#diceSection button {
+  display:inline-block;
+  margin: 5px;
+}
+/*
+button:hover {
+  background-color: white;
+  color:#2e4b5d;
+}
+
+button:active {
+  background-color: #428dbc;
+  transition-duration: 0s;
+  color: white;
+}
+*/
+#diceAdded {
+	background-image: url("images/dice_res.png");
+	background-repeat: no-repeat;
+	height: 127px;
+	background-position: center;
+  display: none;
+}
+
+#allNumbers {
+  display: none;
+}
+
+#ho {
+	position:relative;
+	top: 42px;
+	font-size: 34px;
+}
+
+#he {
+  position: relative;
+  bottom:15px;
+}
+
+#becher {
+  margin-right: 5px;
+  height: 40px;
+}
