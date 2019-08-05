@@ -1,15 +1,36 @@
-<!doctype html>
-
+<!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="script.js"></script>
 
-  <title>Website</title>
-</head>
+    </head>
+    
+    <body onload="useClock(), setInterval(useClock, 1000)" class="flex-body">
+        <div id ="container">
+            <div id ="desktop">
+                <figure>
+                    <a href="HTML/main.html">
+                        <div id="uniicon" class="desksym">
+                            <img class="arrow" src="arrow.png">
+                        </div> 
+                    </a>
+                    <figcaption>HTML-Kurs WS 18/19</figcaption>
+                </figure>
 
-<body>
-  <a href="HTML/main.html">WS 18/19 HTML-Kurs</a>
-  <br>
-  <a href="www/index.html">dnd-app</a>
-</body>
+                <figure>
+                    <a href="www/index.html">
+                        <div id="dndicon" class="desksym">
+                            <img class="arrow" src="arrow.png">
+                        </div> 
+                    </a>
+                    <figcaption>dnd-app</figcaption>
+                </figure>
+            </div>
+            <div id = "taskbar">
+                <span id="start"><img id="wandows" src ="wandows.gif" >Start</span>
+                <span id="clock">22:07</span>
+            </div>
+        </div>    
+    </body>
 </html>
