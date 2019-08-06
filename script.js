@@ -5,8 +5,9 @@ function useClock(){
     var ampm = " AM";
     if(parseInt(hours) > 12){
         hours = (parseInt(hours) -12).toString();
-        ampm
- =" PM";
+        ampm =" PM";
+    }else if(parseInt(hours) == 12){
+        hours = "00";
     }
 
     var date1 = hours+':'+today.getMinutes() + ampm;
