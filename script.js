@@ -15,8 +15,8 @@ function useClock(){
         minutes = "0"+minutes;
     }
 
-    var date1 = hours+':'+today.getMinutes() + ampm;
-    var date2 = today.getHours()+':'+today.getMinutes()+":"+today.getSeconds() + ampm;
+    var date1 = hours+':'+minutes + ampm;
+    var date2 = today.getHours()+':'+minutes+":"+today.getSeconds() + ampm;
     document.getElementById("clock").innerHTML = date1;
     
 }
