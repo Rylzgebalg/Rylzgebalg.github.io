@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+
+      -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+
+        <script src="js/menuChange.js"></script>
+        <script src="js/menuCreate.js"></script>
+		<script src="js/createHTMLscript.js"></script>
+		<script src="js/charManagement.js"></script>
+        <script type = "text/javascript" src="js/dataFiles/classes.js"></script>
+        <script type = "text/javascript" src="js/dataFiles/races.js"></script>
+
+        <link rel="stylesheet" href="css/buttons.css">
+        <link rel="stylesheet" href="css/menu.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/consumableStyle.css">
+
+        <title>Hello World</title>
+    </head>
+    
+    
+    <body onload = "createMenuOnStart(), selectMenuOnStart(),fillRaceSelect(),createSubraces(), createCEfirstClass(), createMulticlasses('CEfirstClass_select', 'CEfirstClass'), loadCharToEdit()">
+      <nav id="navigation">
+      </nav>
+      <section id="content">
+		<input id = "inputForName" class="charProperties"></input>
+		<br>
+		
+		<select id ="raceSelect" class="charProperties" onchange="createSubraces()">
+		</select>
+        <br>
+        
+		<select id="subraceSelect" class="charProperties">
+		</select>
+		<br>
+
+		<br>
+		<br>
+		<a href="index.html"><button onclick="createEditChar()">Finish</button></a>
+		<a href="index.html"><button>Cancel</button></a>
+        <button onclick="giveHer()">alarm</button>
+        <div id="CEfirstClass"> <!--multiclass mit javascript hier rein-->
+
+
+        </div>
+        
+        <button id="moreMulticlassesButton" onclick="makeMulticlassBlock('new')">MULTICLASSING</button>
+		
+      </section>
+    </body>
+</html>

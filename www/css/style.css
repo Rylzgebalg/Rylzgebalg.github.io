@@ -10,7 +10,7 @@ td img {
   display: none;
 }
 
-#content{
+#content, #content2{
   margin-right: 0;
   margin-left: 0;
   width:100%;
@@ -34,9 +34,23 @@ input, select{
 }
 
 input {
+  text-align:center;
   height: 27px;
   border: 1px solid #c9ad6a;
   width: 35px;
+}
+
+#inputForName {
+  width: 95%;
+}
+
+#CEfirstClass, .MulticlassDiv {
+  text-align: center;
+  padding:3px;
+}
+
+#CEfirstClass > input, .MulticlassDiv > input {
+  margin: 5px;
 }
 
 select{
