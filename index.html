@@ -2,17 +2,19 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="style.css">
-        <script src="script.js"></script>
+        <script src="https://unpkg.com/vue@next"></script>
+        
 
     </head>
     
-    <body onload="useClock(), setInterval(useClock, 1000)" class="flex-body">
+    <body class="flex-body">
         <div id ="container">
             <div id ="desktop">
+
                 <figure>
                     <a href="HTML/main.html">
                         <div id="uniicon" class="desksym">
-                            <img class="arrow" src="arrow.png">
+                            <img class="arrow" v-bind:src="source">
                         </div> 
                     </a>
                     <figcaption>HTML-Kurs WS 18/19</figcaption>
@@ -29,8 +31,9 @@
             </div>
             <div id = "taskbar">
                 <span id="start"><img id="wandows" src ="wandows.gif" >Start</span>
-                <span id="clock">22:07</span>
+                <span id="clock">{{timer}}</span>
             </div>
         </div>    
     </body>
+    <script src="script.js"></script>
 </html>
