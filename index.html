@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="style.css">
+
         <script src="https://unpkg.com/vue@next"></script>
         
 
@@ -11,10 +11,20 @@
         <div id ="container">
             <div id ="desktop">
 
-                <figure>
+                <desktop-symbol
+                    v-for="project in projects"
+                    :key = "project.id"
+                    :symboltitle = "project.title"
+                    :linksto = "project.link"
+                    :idtemp = "project.htmlid"
+
+                >     
+                </desktop-symbol>
+           
+           <!--     <figure>
                     <a href="HTML/main.html">
                         <div id="uniicon" class="desksym">
-                            <img class="arrow" v-bind:src="source">
+                            <img class="arrow" src="arrow.png">
                         </div> 
                     </a>
                     <figcaption>HTML-Kurs WS 18/19</figcaption>
@@ -27,13 +37,17 @@
                         </div> 
                     </a>
                     <figcaption>dnd-app</figcaption>
-                </figure>
+                </figure>-->
             </div>
+           
             <div id = "taskbar">
                 <span id="start"><img id="wandows" src ="wandows.gif" >Start</span>
-                <span id="clock">{{timer}}</span>
+                <!--<span id="clock">{{timer}}</span>-->
+                <taskbar-clock :id="'clock'" :time="timer"></taskbar-clock>
             </div>
         </div>    
     </body>
-    <script src="script.js"></script>
+    <script src="script-desktop.js"></script>
+    <script src="script-taskbar.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </html>
