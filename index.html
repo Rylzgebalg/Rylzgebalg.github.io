@@ -11,16 +11,22 @@
         <div id ="container">
             <div id ="desktop">
 
-                <desktop-symbol
+
+           
+
+
+
+                <desktop-symbol2
                     v-for="project in projects"
                     :key = "project.id"
                     :symboltitle = "project.title"
                     :linksto = "project.link"
-                    :idtemp = "project.htmlid"
+                    :bgimage = "project.symbol"
+                    :projectid = "project.id"
+                    @turn-textbox-on = "onOpenTextBox"
 
                 >     
-                </desktop-symbol>
-           
+                </desktop-symbol2>
            <!--     <figure>
                     <a href="HTML/main.html">
                         <div id="uniicon" class="desksym">
@@ -38,10 +44,22 @@
                     </a>
                     <figcaption>dnd-app</figcaption>
                 </figure>-->
+                <div v-if="textopen" id="textWindow">
+                    <div id="textboxTopFlex">
+                        <span>{{infoTitle + '.txt'}}</span>
+                        <img id="textWindowX" @click="textopen = false" src="nocross.png">
+                    </div>
+                    <div id="textWindowInner">
+                      <h1>{{infoTitle}}</h1>
+                      <span v-html="textboxInfo"></span>
+                    </div>
+                  </div>
             </div>
-           
+            
+            
+
             <div id = "taskbar">
-                <span id="start"><img id="wandows" src ="wandows.gif" >Start</span>
+                <span id="start"><img id="wandows" src ="wandows.gif">Start</span>
                 <!--<span id="clock">{{timer}}</span>-->
                 <taskbar-clock :id="'clock'" :time="timer"></taskbar-clock>
             </div>
@@ -50,4 +68,6 @@
     <script src="script-desktop.js"></script>
     <script src="script-taskbar.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script type = "text/javascript" src="dataFiles/projectDesc.js"></script>
 </html>

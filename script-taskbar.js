@@ -2,7 +2,7 @@
 const appTaskbar = Vue.createApp({
     data() {
       return {
-
+        activeColor: 'red',
         timer: ''
         }
     },

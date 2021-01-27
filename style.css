@@ -76,7 +76,54 @@ html, body {
     margin-right: 0.5rem;
 }
 
+#textWindow {
+    position: fixed;
+    top: 10vh;
+    right: 0vw;
+    left:15vw;
+    height:80vh;
+    width:70vw;
+    background-color: whitesmoke;
+    text-align: right;
+    border:1px black solid;
+    border-radius: 10px;
 
+}
+#textWindowInner {
+    background-color: lightgrey;
+    text-align: left;
+
+    height: 95%;
+    width: 100%;
+    overflow: auto;
+    margin: auto;
+
+}
+
+#textWindowInner p{
+    margin: 1vw;
+}
+
+#textWindowInner h1{
+    text-align: center;
+}
+
+#textWindowX{
+    height:20px;
+    display:inline-block;
+    background-color: tomato;
+    border:1px black solid;
+}
+
+#textboxTopFlex{
+    
+    display: flex;
+    justify-content: space-between;
+}
+
+#textboxTopFlex span {
+    margin: 3px;
+}
 
 .desksym{
    height: 5rem;
@@ -85,26 +132,42 @@ html, body {
    position: relative;
 }
 
-.arrow {
-    height: 1rem;
-    position: absolute;
-    left: 0;
-    bottom: 0;
+.symbolBox {
+    position: relative;
+}
+
+.symbolNameBox {
+    border-radius: 5px 40px;
+    background: whitesmoke;
+    text-align: center;
+    padding: 5px;
+}
+
+.symbolNameBox button{
+    min-width: 50px;
+    margin: 1px;
 }
 
 
 figure {
-    width:5rem;
-    text-align: center;
+    width:10rem;
+    
     margin: 0px;
     display: inline-block;
-    margin-left: 0.5rem;
+    margin-left: 1rem;
 }
 
-#uniicon {
-    background-image:url("uni.jpg");
-}
-
-#dndicon {
-    background-image:url("dndsymbol.png");
+/*figcaption{
+    margin: 0px;
+    padding: 0px;
+    position: absolute;
+    bottom: 0rem;
+    z-index: 2;
+    background:#c0c0c0;
+    border: 3px solid #747474;
+    } 
+*/
+img {
+    max-width: 100%;
+    
 }
