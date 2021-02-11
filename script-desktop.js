@@ -10,7 +10,13 @@ const appDesktop = Vue.createApp({
       textboxInfo: '',
       projects: [
         {id: 1, link:'HTML/main.html', htmlid: 'uniicon', title: 'HTML-Kurs', symbol: 'uni.png'},
-        {id: 2, link: 'www/index.html', htmlid: 'dndicon', title: 'dnd-app', symbol: 'dndsymbol.png'}
+        {id: 2, link: 'www/index.html', htmlid: 'dndicon', title: 'dnd-app', symbol: 'dndsymbol.png'},
+        {id: 3, link:'HTML/main.html', htmlid: 'uniicon', title: 'HTML-Kurs', symbol: 'uni.png'},
+        {id: 4, link: 'www/index.html', htmlid: 'dndicon', title: 'dnd-app', symbol: 'dndsymbol.png'},
+        {id: 5, link:'HTML/main.html', htmlid: 'uniicon', title: 'HTML-Kurs', symbol: 'uni.png'},
+        {id: 6, link: 'www/index.html', htmlid: 'dndicon', title: 'dnd-app', symbol: 'dndsymbol.png'},
+        {id: 7, link:'HTML/main.html', htmlid: 'uniicon', title: 'HTML-Kurs', symbol: 'uni.png'},
+        {id: 8, link: 'www/index.html', htmlid: 'dndicon', title: 'dnd-app', symbol: 'dndsymbol.png'}
       ]
       }
   },
@@ -44,7 +50,7 @@ const appDesktop = Vue.createApp({
       }
     },
     template: `
-    <figure>
+    <figure class="col-1 col-s-3">
           <a class = "symbolBox" :href="linksto">
             <img :src="bgimage">
             

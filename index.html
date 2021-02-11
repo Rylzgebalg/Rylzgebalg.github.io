@@ -4,16 +4,18 @@
 
         <script src="https://unpkg.com/vue@next"></script>
         
-
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=false" />
     </head>
     
     <body class="flex-body">
+        <div id = "taskbar">
+            <span id="start"><img id="wandows" src ="wandows.gif">Start</span>
+            <!--<span id="clock">{{timer}}</span>-->
+            <taskbar-clock :id="'clock'" :time="timer"></taskbar-clock>
+        </div>
+        
         <div id ="container">
             <div id ="desktop">
-
-
-           
-
 
 
                 <desktop-symbol2
@@ -58,11 +60,7 @@
             
             
 
-            <div id = "taskbar">
-                <span id="start"><img id="wandows" src ="wandows.gif">Start</span>
-                <!--<span id="clock">{{timer}}</span>-->
-                <taskbar-clock :id="'clock'" :time="timer"></taskbar-clock>
-            </div>
+            
         </div>    
     </body>
     <script src="script-desktop.js"></script>
